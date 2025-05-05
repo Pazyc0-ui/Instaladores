@@ -18,8 +18,8 @@
 
     .fondo {
       position: absolute;
-      width: 200%;
-      height: 200%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: 0;
     }
@@ -32,46 +32,45 @@
 .cuadro-blanco {
   font-size: 35px;
   position: absolute; /* o fixed */
-  top: 75%;
-  left: 68%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  max-width: 1200px;
+  max-width: 1100px;
   min-height: 700px;
   height: auto;
-  width: 90%;
+  width: 80%;
   z-index: 2;
 }
 
     .titulo {
-      top: 45%;
-      left: 68%;
+      top: 40%;
+      left: 48%;
       transform: translate(-50%, -50%);
       width: 1800px;
-      width: 250%;
+      width: 200%;
     }
 
     .evento-gratis {
-      top: 85%;
-      left: 68%;
+      top: 55%;
+      left: 50%;
       transform: translate(-50%, -50%);
       width: 1800px;
     }
     .footer {
-      top: 5%;
+      top: 25%;
       left: 10%;
-      width: 390px;
-      width: 130%;
+      width: 800px;
       
     }
 
     .sello {
   position: absolute;
-  top: 59%;
-  left: 80%;
+  top: 36%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: 1550px;
   z-index: 9999; /* Muy por encima de todo */
@@ -109,7 +108,7 @@
     const form = document.getElementById("formInstaladores");
     const data = new FormData(form);
 
-    fetch('https://script.google.com/macros/s/AKfycby_ThrDJA5yq4kCYN8aPdA7BEGCmREqZdtrmOzscCcgcY5LDPq47-rFTMTiKrx7IUGqxg/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzwSvbTGlml-72CaTZdit5QzNP_srtAY4aXXIkXgz87NVNkORIcVr6dCg_Z03_j_XUh4A/exec', {
       method: 'POST',
       body: data
     })
