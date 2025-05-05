@@ -1,0 +1,262 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evento para Instaladores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #003366;
+    }
+    body {
+  font-family: 'Poppins', sans-serif;
+}
+
+    .fondo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .elemento {
+      position: absolute;
+      z-index: 1;
+    }
+
+.cuadro-blanco {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  min-height: 400px; /* valor por defecto (pantallas chicas) */
+  height: auto;
+  width: 90%;
+  z-index: 2;
+}
+
+/* Para pantallas grandes (mayores a 768px, puedes ajustar el valor si gustas) */
+@media screen and (min-width: 1024px) {
+  .cuadro-blanco {
+    min-height: 300px;
+  }
+}
+
+
+
+    .titulo {
+      top: 45%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+      width: 1500px;
+    }
+
+    .evento-gratis {
+      top: 57%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1400px;
+    }
+
+    .personaje {
+      top: 45%;
+      left: 57%;
+      transform: translate(-50%, -50%);
+      width: 1700px;
+    }
+
+    .logos {
+      top: 45%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 1700px;
+    }
+
+    .sello {
+      top: 45%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      width: 1500px;
+    }
+
+    .barra {
+      top: 46%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1400px;
+    }
+
+    @media (max-width: 768px) {
+      .titulo {
+        width: 300px;
+        top: 100px;
+      }
+      .personaje {
+        width: 150px;
+      }
+
+      .logos {
+        width: 1200px;
+      }
+    }
+
+    @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 1600px) {
+  .cuadro-blanco,
+  .titulo,
+  .evento-gratis,
+  .personaje,
+  .logos,
+  .sello,
+  .barra {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cuadro-blanco,
+  .titulo,
+  .evento-gratis,
+  .personaje,
+  .logos,
+  .sello,
+  .barra {
+    width: 80%;
+  }
+}
+
+@media (max-width: 992px) {
+  .cuadro-blanco,
+  .titulo,
+  .evento-gratis,
+  .personaje,
+  .logos,
+  .sello,
+  .barra {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cuadro-blanco,
+  .titulo,
+  .evento-gratis,
+  .personaje,
+  .logos,
+  .sello,
+  .barra {
+    width: 60%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cuadro-blanco,
+  .titulo,
+  .evento-gratis,
+  .personaje,
+  .logos,
+  .sello,
+  .barra {
+    width: 50%;
+  }
+}
+@media (max-width: 1366px) {
+  .titulo {
+    width: 70%;
+  }
+
+  .cuadro-blanco {
+    width: 75%;
+  }
+
+  .evento-gratis {
+    width: 65%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .titulo {
+    width: 60%;
+    top: 42%;
+  }
+
+  .cuadro-blanco {
+    width: 65%;
+  }
+
+  .evento-gratis {
+    width: 55%;
+    top: 58%;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    width: 50%;
+    top: 40%;
+  }
+
+  .cuadro-blanco {
+    width: 60%;
+  }
+
+  .evento-gratis {
+    width: 50%;
+    top: 60%;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Fondo -->
+  <img src="https://i.imgur.com/hMQaamF.png" class="fondo" alt="Fondo Azul">
+
+  <!-- Elementos -->
+  <img src="https://i.imgur.com/TpLl58f.png" class="elemento sello" alt="Sello rojo">
+  <img src="https://i.imgur.com/zZuv2Tz.png" class="elemento barra" alt="Barra azul">
+  <img src="https://i.imgur.com/tRFR6kp.png" class="elemento titulo" alt="Título">
+  <img src="https://i.imgur.com/wPhsnbU.png" class="elemento evento-gratis" alt="Etiqueta evento gratis">
+  <img src="https://i.imgur.com/Vg5uvlA.png" class="elemento personaje" alt="Instalador">
+  <img src="https://i.imgur.com/0UghZjY.png" class="elemento logos" alt="Logos Azyco, Perdura, Lamosa">
+    <!-- Formulario -->
+  <div class="cuadro-blanco elemento">
+    <form action="https://formsubmit.co/instaladores@azyco.com.mx" method="POST">
+  <h2 style="text-align: center; color: #003366;">Registro de Instaladores</h2>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+    <input type="text" name="nombre" placeholder="Nombre completo" required style="width: 80%; padding: 10px; font-size: 16px;">
+    <input type="email" name="correo" placeholder="Correo electrónico" required style="width: 80%; padding: 10px; font-size: 16px;">
+    <input type="tel" name="telefono" placeholder="Número de teléfono" required style="width: 80%; padding: 10px; font-size: 16px;">
+    <input type="text" name="cumpleaños" placeholder="Cumpleaños" required style="width: 80%; padding: 10px; font-size: 16px;">
+    <input type="text" name="sucursal" placeholder="¿Qué sucursal te invitó?" required style="width: 80%; padding: 10px; font-size: 16px;">
+    
+    <!-- Opcional: redirección después de enviar -->
+    <input type="hidden" name="_next" value="https://azyco.com.mx/gracias.html">
+    <!-- Opcional: desactivar captcha -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <button type="submit" style="padding: 10px 20px; background-color: #003366; color: white; font-size: 16px; border: none; border-radius: 5px;">Registrarse</button>
+  </div>
+</form>
+
+  </div>
+</body>
+</html>
