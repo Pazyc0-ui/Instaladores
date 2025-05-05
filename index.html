@@ -236,7 +236,8 @@
     <input type="text" name="nombre" placeholder="Nombre completo" required style="width: 70%; padding: 7px; font-size: 15px;">
     <input type="email" name="correo" placeholder="Correo electrónico" required style="width: 70%; padding: 7px; font-size: 15px;">
     <input type="tel" name="telefono" placeholder="Número de teléfono" required style="width: 70%; padding: 7px; font-size: 15px;">
-    <input type="text" name="cumpleaños" placeholder="Cumpleaños" required style="width: 70%; padding: 7px; font-size: 15px;">
+    <input type="text" name="cumpleaños" id="cumpleaños" placeholder="Cumpleaños (ddmmaaaa)" required
+  style="width: 70%; padding: 7px; font-size: 15px;" maxlength="8">
     <input type="text" name="sucursal" placeholder="¿Qué sucursal te invitó?" required style="width: 70%; padding: 7px; font-size: 15px;">
     
     <!-- Opcional: redirección después de enviar -->
@@ -308,5 +309,12 @@
       });
     });
   </script>
+  <script>
+  document.getElementById("cumpleaños").addEventListener("input", function () {
+    // Elimina todo lo que no sea dígito
+    this.value = this.value.replace(/\D/g, "").slice(0, 8);
+  });
+</script>
+
 </body>
 </html>
