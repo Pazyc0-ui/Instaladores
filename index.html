@@ -39,19 +39,10 @@
   padding: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   max-width: 400px;
-  min-height: 400px; /* valor por defecto (pantallas chicas) */
-  height: auto;
+  height: 300px; /* valor por defecto (pantallas chicas) */
   width: 90%;
   z-index: 2;
 }
-
-/* Para pantallas grandes (mayores a 768px, puedes ajustar el valor si gustas) */
-@media screen and (min-width: 1024px) {
-  .cuadro-blanco {
-    min-height: 300px;
-  }
-}
-
 
 
     .titulo {
@@ -240,16 +231,36 @@
     <!-- Formulario -->
   <div class="cuadro-blanco elemento">
     <form action="https://formsubmit.co/68d951c8535a5204c2ac3bc1d5e201e8" method="POST">
-  <h2 style="text-align: center; color: #003366;">Registro de Instaladores</h2>
+    <h2 style="text-align: center; color: #003366; margin-top: -15px;">Registro de Instaladores</h2>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-    <input type="text" name="nombre" placeholder="Nombre completo" required style="width: 80%; padding: 10px; font-size: 16px;">
-    <input type="email" name="correo" placeholder="Correo electrónico" required style="width: 80%; padding: 10px; font-size: 16px;">
-    <input type="tel" name="telefono" placeholder="Número de teléfono" required style="width: 80%; padding: 10px; font-size: 16px;">
-    <input type="text" name="cumpleaños" placeholder="Cumpleaños" required style="width: 80%; padding: 10px; font-size: 16px;">
-    <input type="text" name="sucursal" placeholder="¿Qué sucursal te invitó?" required style="width: 80%; padding: 10px; font-size: 16px;">
+    <input type="text" name="nombre" placeholder="Nombre completo" required style="width: 70%; padding: 7px; font-size: 15px;">
+    <input type="email" name="correo" placeholder="Correo electrónico" required style="width: 70%; padding: 7px; font-size: 15px;">
+    <input type="tel" name="telefono" placeholder="Número de teléfono" required style="width: 70%; padding: 7px; font-size: 15px;">
+    <input type="text" name="cumpleaños" placeholder="Cumpleaños" required style="width: 70%; padding: 7px; font-size: 15px;">
+    <input type="text" name="sucursal" placeholder="¿Qué sucursal te invitó?" required style="width: 70%; padding: 7px; font-size: 15px;">
     
     <!-- Opcional: redirección después de enviar -->
-    <input type="hidden" name="_next" value="https://azyco.com.mx/gracias.html">
+    <div id="popup" style="
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #003366;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 9999;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+">
+  ¡Gracias por registrarte!
+</div>
+
+
     <!-- Opcional: desactivar captcha -->
     <input type="hidden" name="_captcha" value="false">
     
@@ -258,5 +269,44 @@
 </form>
 
   </div>
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const form = e.target;
+      const data = new FormData(form);
+  
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          const popup = document.getElementById("popup");
+          popup.style.display = "block";
+          setTimeout(() => {
+            popup.style.opacity = 1;
+          }, 100); // pequeño delay para permitir que el transition se active
+  
+          form.reset();
+  
+          // Oculta gradualmente después de 3 segundos
+          setTimeout(() => {
+            popup.style.opacity = 0;
+            setTimeout(() => {
+              popup.style.display = "none";
+            }, 1000); // coincide con el tiempo de transición
+          }, 3000);
+  
+        } else {
+          alert("Ocurrió un error. Intenta de nuevo.");
+        }
+      }).catch(error => {
+        alert("Error al enviar el formulario.");
+      });
+    });
+  </script>
 </body>
 </html>
