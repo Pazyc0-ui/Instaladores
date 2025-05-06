@@ -99,12 +99,9 @@
         <input type="text" name="nombre" placeholder="Nombre completo" required style="width: 90%; padding: 10px; font-size: 36px;">
         <input type="email" name="correo" placeholder="Correo electrónico" required style="width: 90%; padding: 15px; font-size: 36px;">
         <input type="tel" name="telefono" placeholder="Número de teléfono" required style="width: 90%; padding: 15px; font-size: 36px;">
-        <input type="text" name="cumpleaños" placeholder="Cumpleaños" required style="width: 90%; padding: 15px; font-size: 36px;">
+        <input type="text" name="cumpleaños" id="cumpleaños" placeholder="Cumpleaños (ddmmaaaa)" required style="width: 90%; padding: 15px; font-size: 36px;">
         <input type="text" name="sucursal" placeholder="¿Qué sucursal te invitó?" required style="width: 90%; padding: 15px; font-size: 36px;">
-        <button type="submit" style="padding: 15px 20px; background-color: #003366; color: white; font-size: 36px; border: none; border-radius: 10px;">Registrarse</button>
-      </div>
-    </form>
-  </div>
+    
     <!-- Opcional: redirección después de enviar -->
     <div id="popup" style="
   display: none;
@@ -174,6 +171,13 @@
       });
     });
   </script>
+  <script>
+  document.getElementById("cumpleaños").addEventListener("input", function () {
+    // Elimina todo lo que no sea dígito
+    this.value = this.value.replace(/\D/g, "").slice(0, 8);
+  });
+</script>
+
 </body>
 </html>
 
